@@ -1,0 +1,61 @@
+﻿@page "/"
+
+<style type="text/css">
+
+    .input-group.input-group-unstyled input.form-control {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .input-group-unstyled .input-group-addon {
+        border-radius: 4px;
+        border: 0px;
+        background-color: transparent;
+    }
+</style>
+
+<!-- Input Group -->
+<div class="col-lg-4">
+    <div class="form-group">
+        <label class="control-label" for="inputGroup"></label>
+        <div class="input-group">
+            <input type="text" class="form-control"
+                   placeholder="City" id="inputGroup" @bind="Message" />
+            <button @onclick="GetCity">Search</button>
+
+            <span class="input-group-addon">
+                <i class="fa fa-search"></i>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="widget">
+
+    <div class="left-panel panel">
+        <div class="date">
+            @DateFromate
+
+
+        </div>
+        <div class="city">
+            @openWeatherModels.Name
+        </div>
+        <div class="temp">
+            <img src="https://s5.postimg.cc/yzcm7htyb/image.png" alt="" width="60">
+
+            @openWeatherModels.Main.Temperature.FahrenheitCurrent &deg;
+
+        </div>
+
+    </div>
+    <div class="right-panel panel" style="	margin-top:-80px;">
+    
+    </div>
+
+</div>
+
